@@ -35,6 +35,12 @@ def update
   end
 end
 
+def destroy
+  @step.destroy
+    flash[:notice] = "Step has been deleted."
+    p @list
+    redirect_to @list
+end
 
 private
   def find_list
