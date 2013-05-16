@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516082236) do
+ActiveRecord::Schema.define(:version => 20130516201252) do
 
   create_table "lists", :force => true do |t|
     t.string   "name"
@@ -19,5 +19,15 @@ ActiveRecord::Schema.define(:version => 20130516082236) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "steps", :force => true do |t|
+    t.integer  "stepnum"
+    t.string   "description"
+    t.integer  "list_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "steps", ["list_id"], :name => "index_steps_on_list_id"
 
 end

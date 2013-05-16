@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+
+
   # GET /lists
   # GET /lists.json
   def index
