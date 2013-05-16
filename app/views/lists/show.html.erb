@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @list.name %>
-</p>
+<h1><%= @list.name %></h1>
 
-<p>
-  <b>Description:</b>
-  <%= @list.description %>
-</p>
+<p><%= @list.description %></p>
+
+
+<div id='step'>
+  <ol>
+<% @list.steps.each do |step| %>
+
+  <li><%= step.description %></li>
+  <% end %>
+</ol>
+</div>
 
 <%= link_to "New Step", new_list_step_path(@list) %>
 

@@ -12,7 +12,7 @@ def create
 
   if @step.save
     flash[:notice] = "Step has been created."
-    redirect_to [@list, @step]
+    redirect_to @list
   else
     flash[:alert] = "Step has not been created."
     render :action => "new"
