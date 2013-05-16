@@ -9,12 +9,12 @@
   <ol>
 <% @list.steps.each do |step| %>
 
-  <li><%= step.description %></li>
+  <li><%= step.description %> <%= link_to "Edit", edit_list_step_path(@list) %></li>
   <% end %>
 </ol>
 </div>
 
-<%= link_to "New Step", new_list_step_path(@list) %>
+<p><%= link_to "Add a New Step", new_list_step_path(@list) %></p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Edit List', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
